@@ -300,25 +300,38 @@
             </div>
         </div>
 
-        <div class="contact-form">
+<div class="contact-form">
             <h2>Send Me a Message</h2>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn" onclick="alert('Thank you for your message! This is a demo form. Please connect via LinkedIn or Instagram.')">Send Message</button>
+            <form action="https://formspree.io/f/mdkyzjrg" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="_subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <!-- Spam koruması (görünmez honeypot) -->
+                <input type="text" name="_gotcha" style="display:none">
+                
+                <!-- Form gönderildikten sonra aynı sayfada kalması için -->
+                <input type="hidden" name="_next" value="https://esmauluslu.github.io/contact.html">
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
     </main>
 
